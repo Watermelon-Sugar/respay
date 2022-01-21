@@ -1,0 +1,70 @@
+.property {
+  overflow: hidden;
+}
+.prop-info {
+  display: flex;
+  justify-content: center;
+}
+.add-property {
+  font-family: 'MetaPro', serif;
+  font-size: 24px;
+  line-height: 22px;
+  color: #038618;
+  font-weight: 500;
+  letter-spacing: -0.408px;
+}
+
+.row {
+  margin-left: 20px;
+}
+
+.row .btn {
+  padding: 0;
+  text-align: left;
+}
+
+.card-body {
+  background-color: #fff;
+  margin-bottom: 25px;
+}
+
+.card-body h5 {
+  font-family: 'MetaPro', serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #767272;
+}
+
+.card-title .unit {
+  font-family: 'MetaPro', serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #038618;
+  position: relative;
+  left: 30%;
+}
+ .card-body .btn {
+  font-family: 'MetaPro', serif;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.res {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #a5a4a4;
+  text-decoration: none;
+}
+
+.card-body p {
+  font-family: 'MetaPro', serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #767272;
+}
+
+

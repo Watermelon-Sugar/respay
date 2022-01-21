@@ -1,0 +1,26 @@
+.drag {
+    border: 1px dashed #6f6f6f;
+    height: 104px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+h6 {
+    font-family: 'MetaPro', serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.41px;
+    color: #3C3C3C;
+}
+.drag input {
+    padding: 75px 150px;
+}
+
+.save {
+    padding: 40px;
+}
+
+.ant-modal-content {
+    border-radius: 18px;
+}

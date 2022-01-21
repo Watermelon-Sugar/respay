@@ -1,0 +1,60 @@
+.add-button button {
+    width: 222px;
+    height: 62px;
+    border-radius: 8px;
+    padding: 19px 30px;
+    background-color: #038618;
+    color: #ffffff;
+    margin: 0px 10px;
+    font-family: 'MetaPro', serif;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    border: none;
+}
+.action-button button {
+    width: 105px;
+    height: 60px;
+    border-radius: 8px;
+    padding: 19px 30px;
+    background-color: #038618;
+    color: #ffffff;
+    margin: 0px 10px;
+    font-family: 'MetaPro', serif;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    border: none;
+}
+
+.add-units button {
+    width: 547px;
+    height: 62px;
+    border-radius: 4px;
+    padding: 19px 30px;
+    background-color: #038618;
+    color: #ffffff;
+    margin: 0px 10px;
+    font-family: 'MetaPro', serif;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    border: none;
+    text-align: center;
+}
+
+.view button {
+    width: 547px;
+    height: 62px;
+    border-radius: 4px;
+    padding: 19px 30px;
+    background-color: #ffffff;
+    color: #038618;
+    margin: 0px 10px;
+    font-family: 'MetaPro', serif;
+    font-weight: bold;
+    line-height: 22px;
+    font-size: 16px;
+    border: 1px solid #038618;
+    text-align: center;
+}
