@@ -3,7 +3,12 @@
     height: 104px;
     box-sizing: border-box;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 h6 {
     font-family: 'MetaPro', serif;
@@ -12,9 +17,7 @@ h6 {
     line-height: 24px;
     letter-spacing: -0.41px;
     color: #3C3C3C;
-}
-.drag input {
-    padding: 75px 150px;
+    padding-top: 100px;
 }
 
 .save {
@@ -24,3 +27,4 @@ h6 {
 .ant-modal-content {
     border-radius: 18px;
 }
+

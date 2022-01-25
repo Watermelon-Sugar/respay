@@ -1,0 +1,62 @@
+.check-logo {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.mssg h5 {
+    font-family: 'MetaPro', serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    color: #038618;
+    text-align: center;
+}
+
+.mssg p {
+    font-family: 'MetaPro', serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.41px;
+    color: #767272;
+    text-align: center;
+}
+
+.buttonn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.buttonn .adu {
+    background-color: #038618;
+    border-radius: 4px;
+    font-family: 'MetaPro', serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    width: 450px;
+    height: 62px;
+    border: 1px solid #038618;
+}
+
+.buttonn .vip {
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-family: 'MetaPro', serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #038618;
+    width: 450px;
+    height: 62px;
+    border: 1px solid #038618;
+}

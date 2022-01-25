@@ -11,7 +11,7 @@ const Navbar = () => {
             }}>
                 <div className="nav-bar" style={{
                     display: "flex",
-                    marginLeft: '45%',
+                    justifyContent: 'flex-end',
                     padding: '20px'
                     }}>
                     

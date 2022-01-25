@@ -2,7 +2,6 @@ import React from 'react'
 import * as MdIcons from 'react-icons/md';
 import {Button, Modal} from "antd";
 import './Rent.css'
-import SaveButton from '../../Buttons/SaveButton';
 
 
 const Rent = ({showUpload, setShowUpload}) => {
@@ -35,11 +34,11 @@ const handleUpload = () => {
           color: '#767272',
         }}onClick={handleClose}><MdIcons.MdOutlineArrowBack /> Back</span></p>
 
-        <h1>Add New Rent/Leases </h1>
+        <h1 className='add-new'>Add New Rent/Leases </h1>
 
         <h6>Upload Property Images</h6>
 
-        <div className='drag' style={{ marginTop: 16, height: 180 }}>
+        <div className='drag' style={{ marginTop: 16}}>
 
             <input type='file' />
         </div>
