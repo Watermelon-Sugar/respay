@@ -14,7 +14,7 @@ const Sidebar = () => {
         <nav style={{
             background: '#038618',
             width: '278px',
-            height: '90vh'
+            height: '100vh'
         }}>
             {MenuItems.map((item, index) => {
                 return <SubMenu item={item} key={index} />;

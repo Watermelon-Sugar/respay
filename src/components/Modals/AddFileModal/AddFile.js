@@ -1,6 +1,9 @@
 import React from 'react';
-import SaveButton from '../components/Buttons/SaveButton';
+
+import {Button} from "antd";
 import * as MdIcons from 'react-icons/md';
+import { Link } from 'react-router-dom';
+
 
 const AddFile = () => {
     return (
@@ -14,7 +17,20 @@ const AddFile = () => {
 
             </div>
 
-            <SaveButton />
+            <Link to="/success-report">
+                <Button htmlType="submit" block style={{
+                background: '#038618',
+                borderRadius: '4px',
+                fontFamily: 'MetaPro, serif',
+                fontWeight: 'bold',
+                fontSize: '16px',
+                lineHeight: '22px',
+                textAlign: 'center',
+                height: '62px',
+                color: '#ffffff'}}>
+                    Save
+                </Button>
+            </Link>
         </div>
     )
 }

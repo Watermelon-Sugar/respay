@@ -1,5 +1,6 @@
 .property {
   overflow: hidden;
+  width: 100%;
 }
 .prop-info {
   display: flex;
@@ -14,21 +15,8 @@
   letter-spacing: -0.408px;
 }
 
-.row {
-  margin-left: 20px;
-}
-
-.row .btn {
-  padding: 0;
-  text-align: left;
-}
-
-.card-body {
-  background-color: #fff;
-  margin-bottom: 25px;
-}
-
 .card-body h5 {
+  text-align: left;
   font-family: 'MetaPro', serif;
   font-weight: bold;
   font-size: 16px;
@@ -65,6 +53,7 @@
   font-size: 16px;
   line-height: 21px;
   color: #767272;
+  text-align: left;
 }
 
 

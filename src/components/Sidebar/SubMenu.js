@@ -11,6 +11,7 @@ const SidebarLink = styled( Link )`
   list-style: none;
   height: 40px;
   padding: 16px 24px;
+  margin-bottom: 20px;
   text-decoration: none;
   font-family: "MetaPro, serif";  font-style: normal;
   font-weight: 700;

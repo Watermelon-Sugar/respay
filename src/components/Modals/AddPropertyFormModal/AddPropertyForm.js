@@ -1,25 +1,68 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './AddPropertyForm.css';
 import * as MdIcons from 'react-icons/md';
 import { Modal } from "antd";
 import { Form, Input, Button, Select } from "antd";
 import Rent from '../RentModal/Rent';
 import tagRender from "../../tagRender";
+import RESPAY from '../../../Adapters/Axios/'
+import Item from 'antd/lib/list/Item';
 const { TextArea } = Input;
 const { Option } = Select;
 
 
 
+
 const AddPropertyForm = ({isModalVisible, setIsModalVisible, showUpload, setShowUpload}) => {
+  const [countryState, setCountryState] = useState([])
+  const [stateCity, setStateCity] = useState([])
+  const [propertyType, setPropertyType] = useState([])
+  const [buildingType, setBulidingType] = useState([])
+  const [amenities, setAmenities] = useState([])
 
+  const getLocation = async() => {
+    const response = await RESPAY.get('/api/State/156');
+    const response1 = await RESPAY.get(`/api/Utilities/CityByState`, {
+    params: {
+      State: 'Lagos'
+    }
+  })
+    setStateCity(response1?.data?.data)
+    setCountryState(response?.data?.data)
+  }
 
-  const options = [
-    { value: "Fence" },
-    { value: "Swimming Pool" },
-    { value: "Facility Building" },
-    { value: "Garden" },
-    { value: "Gym" },
-  ];
+  const getPropertyTypes = async() => {
+    const response = await RESPAY.get('/api/PropertyType');
+    
+    setPropertyType(response?.data?.data)
+  }
+
+  const getBuildingTypes = async() => {
+    const response = await RESPAY.get('/api/BuildingType');
+    console.log(response)
+    setBulidingType(response?.data?.data)
+  }
+
+  const getAmenities = async() => {
+    const response = await RESPAY.get('/api/Amenities');
+    
+    const data = await response?.data?.data
+    
+    const amenityOptions = data.map((item)=>({value: item.name}))
+    setAmenities(amenityOptions)
+  }
+
+  useEffect( ()=> {
+    getLocation()
+    getPropertyTypes()
+    getBuildingTypes()
+    getAmenities()
+    console.log('here')
+  }, [])
+
+  
+  
+
 
   const [form] = Form.useForm();
   const handleOk = () => {
@@ -129,9 +172,11 @@ const AddPropertyForm = ({isModalVisible, setIsModalVisible, showUpload, setShow
             borderRadius: '5px',
           
           }}>
-            <Option value="male">male</Option>
-            <Option value="female">female</Option>
-            <Option value="other">other</Option>
+            {countryState.map((item)=>{
+              return (<Option value={item.states}>{item.states}</Option>)
+            })}
+            
+            
           </Select>
         </Form.Item>
 
@@ -144,9 +189,9 @@ const AddPropertyForm = ({isModalVisible, setIsModalVisible, showUpload, setShow
           }}
         >
           <Select placeholder="City" allowClear showSearch >
-            <Option value="male">male</Option>
-            <Option value="female">female</Option>
-            <Option value="other">other</Option>
+             {stateCity.map((item)=>{
+              return (<Option value={item.name}>{item.name}</Option>)
+            })}
           </Select>
         </Form.Item>
 
@@ -176,9 +221,11 @@ const AddPropertyForm = ({isModalVisible, setIsModalVisible, showUpload, setShow
           }}
         >
           <Select placeholder="Residential" allowClear showSearch>
-            <Option value="male">male</Option>
-            <Option value="female">female</Option>
-            <Option value="other">other</Option>
+            {propertyType.map((item)=>{
+               return (<Option value={item.name}>{item.name}</Option>)
+            })}
+            
+            
           </Select>
         </Form.Item>
 
@@ -191,9 +238,10 @@ const AddPropertyForm = ({isModalVisible, setIsModalVisible, showUpload, setShow
           }}
         >
           <Select placeholder="Building Type" allowClear showSearch >
-            <Option value="male">male</Option>
-            <Option value="female">female</Option>
-            <Option value="other">other</Option>
+           {buildingType.map((item)=>{
+               return (<Option value={item.name}>{item.name}</Option>)
+            })}
+
           </Select>
         </Form.Item>
 
@@ -209,7 +257,7 @@ const AddPropertyForm = ({isModalVisible, setIsModalVisible, showUpload, setShow
             showArrow
             tagRender={tagRender}
             placeholder="Amenities"
-            options={options}
+            options={amenities}
           />
         </Form.Item>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ActionButton from '../components/Buttons/ActionButton';
 import 'bootstrap/dist/css/bootstrap.css';
 import * as MdIcons from 'react-icons/md';
@@ -6,8 +6,25 @@ import * as RiIcons from 'react-icons/ri';
 import Splash from '../unsplash_2d4lAQAlbDA.png';
 import Kitchen from '../unsplash_MP0bgaS_d1c.png';
 import Room from '../unsplash_L7EwHkq1B2s.png';
-import './PropertyDetails.css'
+import './PropertyDetails.css';
+import { useParams } from 'react-router-dom';
+import RESPAY from '../Adapters/Axios';
+// import PieChart from '../components/PieChart';
+
 const PropertyDetails = () => {
+    const [propertyDetail, setPropertyDetail] = React.useState({})
+    const idParams = useParams()
+    console.log(idParams)
+    const getPropertyDetail = async () => {
+        const response = await RESPAY.get('/api/propertybyid', {params:{
+            Id:idParams.id
+        }})
+        setPropertyDetail(response.data?.data[0])
+
+    }
+    useEffect(()=>{
+        getPropertyDetail()
+    },[])
     return (
         
     <div>
@@ -31,10 +48,10 @@ const PropertyDetails = () => {
                     <div className="terr">
                         <img src={Splash} alt="home" />
                         <div className='more-info'>
-                            <h5>Top Court Garden</h5>
-                            <p className='addy'>24, Roland Road, Challenge, Ibadan, Oyo, NG</p>
-                            <p className='type'>Property Type: Residential</p>
-                            <p className='type'>Property Sub-Type: Semi-Detached</p>
+                            <h5>{propertyDetail.propertyName}</h5>
+                            <p className='addy'>{propertyDetail.address}</p>
+                            <p className='type'>{propertyDetail.strPropType}</p>
+                            <p className='type'>{propertyDetail.strBuildingType}</p>
                         </div>
                     </div>
                     <div className="indoor">
@@ -78,7 +95,7 @@ const PropertyDetails = () => {
                             <span className=' pd btn'>See More <MdIcons.MdOutlineArrowForward /></span>
                         </div>
                         <div className="circle">
-                           
+                            {/* <PieChart /> */}
                         </div>
                     </div>
                 </div>
